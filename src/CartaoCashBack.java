@@ -19,6 +19,20 @@ public void setTipo(int tipo) {
 	Tipo = tipo;
 }
 
+public String toString() {
+	String strTipo="";
+	if (this.Tipo == 3) {
+		strTipo = "BRONZE";
+	}
+	else if (this.Tipo == 2) {
+		strTipo = "SILVER";
+	}
+	else if (this.Tipo==1){
+		strTipo = "GOLD";
+	}
+	return "CARTAO CB("+strTipo+"):"+super.numeroCartao+"|"+super.nomeTitular+" ("+super.mesValidade+"/"+super.anoValidade+")  R$ "+super.saldo;
+}
+
 public boolean comprar(double valor)
 {
 	if (this.Tipo==1) //gold

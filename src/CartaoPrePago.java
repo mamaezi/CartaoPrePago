@@ -49,7 +49,7 @@ public class CartaoPrePago {
 		this.saldo = saldo;
 	}
 	
-	void adicionarCredito(double valor) {
+	public void adicionarCredito(double valor) {
 		//this.saldo = this.saldo+valor;
 		this.saldo += valor;
 	}
@@ -61,5 +61,8 @@ public class CartaoPrePago {
 		}
 		else return false;
 		
+	}
+	public String toString() {
+		return "Cartao " + this.numeroCartao+ "|"+ this.nomeTitular + "(" + this.mesValidade +"/"+ this.anoValidade + ") R$" + this.saldo;
 	}
 }

@@ -8,7 +8,20 @@ public class Compra {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	CartaoPrePago c1,c2,c3,c4,c5;
+	CartaoPrePago c1,c2,c3,c4,c5,cartoes[];
+cartoes = new CartaoPrePago[6];
+
+    
+	cartoes[0] = new CartaoPrePago("1","1",2020,1, 1000);
+	cartoes[1] = new CartaoPrePago("2","2",2020,1, 2000);
+	
+	cartoes[2] = new CartaoPrePago("3","3",2020,1, 3000);
+	
+	cartoes[3] = new CartaoCashBack("4","4",2020,1, 1000,1);
+	
+	cartoes[4] = new CartaoCashBack("5","5",2020,1, 2000,2);
+	
+	cartoes[5] = new CartaoCashBack("6","6",2020,1, 3000,3);
 	
 	
 	c1 = new CartaoPrePago("20102","Work1",2020,6,1000);
@@ -67,6 +80,21 @@ public class Compra {
 		  System.out.println("debito nao autorizado em c5");			  
 	  }
 		 
-}
+  
+  for (int pos=0; pos<cartoes.length;pos++) {
+	  if (cartoes[pos].comprar(150)) {
+		System.out.println ("compra ok " + cartoes[pos].getNumeroCartao());
+  }
+  else { System.out.println("compra nao autorizada");
+  }
+	  
+  }  
+	  for (CartaoPrePago c:cartoes) {
+		  //System.out.println(c.getNumeroCartao()+ " R% " + c.getSaldo());
+		  System.out.println(c);
+	  }
 
-}
+  
+  
+  
+}}
